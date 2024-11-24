@@ -1,17 +1,26 @@
 package com.example.jetpackcompose
 
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,4 +60,44 @@ fun MultipleStylesInText() {
 @Composable
 fun CenterText() {
     Text("Hello World", textAlign = TextAlign.Center, modifier = Modifier.width(150.dp))
+}
+
+@Composable
+fun LongText() {
+    Text("hello ".repeat(500), maxLines = 5, overflow = TextOverflow.Ellipsis)
+}
+
+@Composable
+fun SimpleOutlinedTextFieldSample() {
+    var text by remember { mutableStateOf("") }
+
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Enter your name") }
+    )
+}
+
+@Composable
+fun PasswordTextField() {
+    var password by rememberSaveable { mutableStateOf("") }
+
+    OutlinedTextField(
+        value = password,
+        onValueChange = { password = it },
+        label = { Text("Enter password") },
+        visualTransformation = PasswordVisualTransformation(),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+    )
+}
+
+@Composable
+fun NoLeadingZeroes() {
+    var input by rememberSaveable { mutableStateOf("") }
+    TextField(
+        value = input,
+        onValueChange = { newText ->
+            input = newText.trimStart { it == '0' }
+        }
+    )
 }
