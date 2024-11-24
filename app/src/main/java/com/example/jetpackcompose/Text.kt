@@ -2,6 +2,12 @@ package com.example.jetpackcompose
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -27,7 +33,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun CustomText() {
-    Text("Hello dear", style = TextStyle(color = Color.Red))
+    Text("Hello dear, how are you", style = TextStyle(color = Color.Red))
 }
 
 @Composable
@@ -101,3 +107,4 @@ fun NoLeadingZeroes() {
         }
     )
 }
+
