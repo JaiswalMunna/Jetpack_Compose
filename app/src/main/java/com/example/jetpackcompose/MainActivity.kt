@@ -16,14 +16,19 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcompose.app_layout.AssistChipExample
 import com.example.jetpackcompose.app_layout.BadgeExample
 import com.example.jetpackcompose.app_layout.BadgeInteractiveExample
 import com.example.jetpackcompose.app_layout.CardMinimalExample
+import com.example.jetpackcompose.app_layout.CheckboxMinimalExample
+import com.example.jetpackcompose.app_layout.CheckboxParentExample
 import com.example.jetpackcompose.app_layout.ElevatedButtonExample
 import com.example.jetpackcompose.app_layout.ElevatedCardExample
 import com.example.jetpackcompose.app_layout.FilledButtonExample
 import com.example.jetpackcompose.app_layout.FilledCardExample
 import com.example.jetpackcompose.app_layout.FilledTonalButtonExample
+import com.example.jetpackcompose.app_layout.FilterChipExample
+import com.example.jetpackcompose.app_layout.InputChipExample
 import com.example.jetpackcompose.app_layout.OutlinedButtonExample
 import com.example.jetpackcompose.app_layout.OutlinedCardExample
 import com.example.jetpackcompose.app_layout.PartialBottomSheet
@@ -77,10 +82,17 @@ class MainActivity : ComponentActivity() {
 //                        TextButtonExample()
 //                    }
                     Column (modifier = Modifier.padding(15.dp)){
-                        CardMinimalExample()
-                        FilledCardExample()
-                        ElevatedCardExample()
-                        OutlinedCardExample()
+//                        CardMinimalExample()
+//                        FilledCardExample()
+//                        ElevatedCardExample()
+//                        OutlinedCardExample()
+
+//                        CheckboxMinimalExample()
+//                        CheckboxParentExample()
+
+                        AssistChipExample()
+                        FilterChipExample()
+                        InputChipExample(text = "Munna")
                     }
 
                 }
